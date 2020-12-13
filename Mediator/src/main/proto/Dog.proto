@@ -1,0 +1,40 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc.server.grpcserver.dog;
+
+message ProtoDog {
+    string breed = 1;
+    string name = 2;
+    string description = 3;
+    int32 price = 4;
+}
+
+message DeleteRequest {
+	string dog_id = 1;
+    string cash_register_id = 2;
+}
+
+message DeleteResponse {
+    string report = 1;
+}
+
+message GetRequest {
+}
+
+message GetResponse {
+    repeated ProtoDog dogs = 1;
+}
+
+message CreateRequest {
+	ProtoDog dog = 1;
+}
+
+message CreateResponse {
+    string id = 1;
+}
+
+service DogService {
+    rpc get(GetRequest) returns (GetResponse);
+    rpc delete(DeleteRequest) returns (DeleteResponse);
+    rpc create(CreateRequest) returns (CreateResponse);
+}

@@ -1,0 +1,33 @@
+package com.example.demo.models.accessory;
+
+import java.util.UUID;
+
+public final class Accessory{
+	private String forDogId;
+	private Type type;
+	private Color color;
+	private int price;
+
+	public Accessory() {}
+	
+	public Accessory(Type type, Color color, int price){
+		this.forDogId = UUID.randomUUID().toString();
+		this.type = type;
+		this.color = color;
+		this.price = price;
+	}
+	
+	public String getForDogId() {
+		return forDogId;
+	}
+	
+	public int getPrice() {
+		return price;
+	}
+
+	@Override
+	public String toString() {
+		return type + " " + color + ". PRICE: " + price + "Hryvnia. ID " + forDogId;
+	}
+
+}

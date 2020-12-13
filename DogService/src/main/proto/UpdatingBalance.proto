@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package com.example.grpc.server.grpcserver.updating;
+
+message UpdateRequest {
+	string cash_registerId = 1;
+	int32 added_amount = 2;
+}
+
+message UpdateResponse {
+}
+
+service UpdatingBalanceService {
+	rpc update(UpdateRequest) returns (UpdateResponse);
+}

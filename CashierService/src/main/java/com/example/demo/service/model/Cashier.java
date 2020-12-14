@@ -7,8 +7,13 @@ import javax.persistence.Id;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
 @Entity
 @EnableAutoConfiguration
+@AllArgsConstructor
 public final class Cashier{
 	@Id
 	private String id;

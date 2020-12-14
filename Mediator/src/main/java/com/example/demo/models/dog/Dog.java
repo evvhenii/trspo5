@@ -2,6 +2,9 @@ package com.example.demo.models.dog;
 
 import java.util.UUID;
 
+import lombok.Data;
+
+@Data
 public final class Dog{
 	private String id;
 	private Breed breed;
@@ -23,11 +26,5 @@ public final class Dog{
 	
 	public int getPrice() {
 		return price;
-	}
-	
-	@Override
-	public String toString() {
-		return breed + " " + name + ". " + description + ". PRICE: " +
-	           price + "Hryvnia. ID: " + id + "\n";
 	}
 }

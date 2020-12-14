@@ -28,6 +28,12 @@ public class CashRegistersServiceImpl implements CashRegisterService {
 	}
 	
 	@Override
+	public void createCashRegister(CashRegister cashRegister) {
+		cashRegisterRepo.save(cashRegister);
+	}; 
+
+	
+	@Override
 	public String cashRegistersReport() {  
 		List<CashRegister> cashRegisters=(List<CashRegister>)cashRegisterRepo.findAll();
 		

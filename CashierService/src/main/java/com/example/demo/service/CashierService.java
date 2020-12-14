@@ -15,4 +15,6 @@ public interface CashierService {
 	Cashier createCashier(String name);
 
 	List<Cashier> getCashiers();
+
+	void createCashier(Cashier cashier);
 }

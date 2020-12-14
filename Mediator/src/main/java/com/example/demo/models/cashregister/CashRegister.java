@@ -2,6 +2,9 @@ package com.example.demo.models.cashregister;
 
 import java.util.UUID;
 
+import lombok.Data;
+
+@Data
 public final class CashRegister {
 	private String id;
 	private String name;
@@ -20,10 +23,5 @@ public final class CashRegister {
 	public void setAmountOfCash(int amount) {
 		this.amountOfCash = amount;
 		System.out.println("In the cash register \"" + name + "\" " + amount + "Hryvnia");
-	}
-	
-	@Override
-	public String toString() {
-		return "In the cash register " + name + " " + amountOfCash + "Hryvnia. ID " + id;
 	}
 }

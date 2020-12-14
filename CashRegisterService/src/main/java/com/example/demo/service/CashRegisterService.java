@@ -22,4 +22,6 @@ public interface CashRegisterService {
 
 	List<CashRegister> getCashRegisters();
 
+	void createCashRegister(CashRegister cashRegister);
+
 }

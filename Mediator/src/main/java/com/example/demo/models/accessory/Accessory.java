@@ -2,6 +2,9 @@ package com.example.demo.models.accessory;
 
 import java.util.UUID;
 
+import lombok.Data;
+
+@Data
 public final class Accessory{
 	private String forDogId;
 	private Type type;
@@ -23,11 +26,6 @@ public final class Accessory{
 	
 	public int getPrice() {
 		return price;
-	}
-
-	@Override
-	public String toString() {
-		return type + " " + color + ". PRICE: " + price + "Hryvnia. ID " + forDogId;
 	}
 
 }

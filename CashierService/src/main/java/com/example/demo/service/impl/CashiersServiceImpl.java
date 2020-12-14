@@ -34,6 +34,11 @@ public class CashiersServiceImpl implements CashierService {
 	}
 	
 	@Override
+	public void createCashier(Cashier cashier) {
+		cashierRepo.save(cashier);
+	}
+	
+	@Override
 	public String cashiersReport() {  
 		List<Cashier> cashiers=(List<Cashier>)cashierRepo.findAll();
 		

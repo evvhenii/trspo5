@@ -2,6 +2,9 @@ package com.example.demo.models.cashier;
 
 import java.util.UUID;
 
+import lombok.Data;
+
+@Data
 public final class Cashier{
 	private String id;
 	private String name;

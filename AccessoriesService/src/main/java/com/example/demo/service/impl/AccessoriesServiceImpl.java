@@ -40,6 +40,10 @@ public class AccessoriesServiceImpl implements AccessoriesService{
 		accessoriesRepo.save(forDog);
 		return forDog;
 	}
+	@Override
+	public void createAccessory(Accessory accessory) {
+		accessoriesRepo.save(accessory);
+	}
 	
 	@Override
 	public List<Accessory> getAccessories() {   

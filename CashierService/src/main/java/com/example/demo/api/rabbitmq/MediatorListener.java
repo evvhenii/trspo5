@@ -1,4 +1,4 @@
-package com.example.demo.rabbitmq;
+package com.example.demo.api.rabbitmq;
 
 import javax.annotation.PostConstruct;
 
@@ -31,7 +31,7 @@ public class MediatorListener {
 		Connection connection = factory.newConnection();
 		Channel channel = connection.createChannel();
 
-		channel.queueDeclare(ADDING, false, false, false, null);
+		channel.queueDeclare(ADDING, true, false, false, null);
 		System.out.println(" [*] Waiting for messages...");
 
 		DeliverCallback deliverCallback = (consumerTag, delivery) -> {
@@ -39,7 +39,7 @@ public class MediatorListener {
 			Cashier cashier = new ObjectMapper().readValue(message, Cashier.class);
 
 			System.out.println(" [x] Received message to create'" + cashier + "'");
-			//cashRegisterService.createCashier(cashier);
+			cashRegisterService.createCashier(cashier);
 		};
 		channel.basicConsume(ADDING, true, deliverCallback, consumerTag -> {});
 	}
@@ -52,13 +52,13 @@ public class MediatorListener {
 		
 		Channel channel = connection.createChannel();
 
-		channel.queueDeclare(DELETING, false, false, false, null);
+		channel.queueDeclare(DELETING, true, false, false, null);
 		System.out.println(" [*] Waiting for messages...");
 
 		DeliverCallback deliverCallback = (consumerTag, delivery) -> {
 			String id = new String(delivery.getBody(), "UTF-8");
 			System.out.println(" [x] Received message to delete cashier with id '" + id + "'");
-			//cashRegisterService.deleteCashierById(id);
+			cashRegisterService.deleteCashierById(id);
 		};
 		channel.basicConsume(DELETING, true, deliverCallback, consumerTag -> {});
 	}

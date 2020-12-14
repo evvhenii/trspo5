@@ -7,9 +7,12 @@ import javax.persistence.Id;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import lombok.Data;
+
 
 @Entity
 @EnableAutoConfiguration
+@Data
 public final class Accessory{
 	
 	@Id
@@ -41,11 +44,6 @@ public final class Accessory{
 	
 	public int getPrice() {
 		return price;
-	}
-
-	@Override
-	public String toString() {
-		return type + " " + color + ". PRICE: " + price + "Hryvnia. ID " + id;
 	}
 
 }

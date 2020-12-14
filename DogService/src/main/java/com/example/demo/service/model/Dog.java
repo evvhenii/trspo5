@@ -5,9 +5,12 @@ import javax.persistence.*;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
+import lombok.Data;
+
 
 @EnableAutoConfiguration
 @Entity
+@Data
 public final class Dog{
 	@Id
 	private String id;
@@ -46,9 +49,5 @@ public final class Dog{
 		return price;
 	}
 	
-	@Override
-	public String toString() {
-		return breed + " " + name + ". " + description + ". PRICE: " +
-	           price + "Hryvnia. ID: " + id + "\n";
-	}
+	
 }

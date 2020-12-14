@@ -20,11 +20,4 @@ public final class Dog{
 		this.price = price;
 	}
 	
-	public String getDogId() {
-		return id;
-	}
-	
-	public int getPrice() {
-		return price;
-	}
 }

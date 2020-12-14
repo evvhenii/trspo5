@@ -18,4 +18,6 @@ public interface DogsService {
 	Dog getDogById(String id);
 
 	List<Dog> getDogs();
+
+	void createDog(Dog dog);
 }

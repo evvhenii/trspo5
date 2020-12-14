@@ -43,6 +43,11 @@ public class DogsServiceImpl implements DogsService{
 	}
 	
 	@Override
+	public void createDog(Dog dog) {
+		dogsRepo.save(dog);
+	}
+	
+	@Override
 	public List<Dog> getDogs() {  
 		List<Dog> dogs=(List<Dog>)dogsRepo.findAll();
 		return dogs;

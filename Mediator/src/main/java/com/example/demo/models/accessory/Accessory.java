@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public final class Accessory{
-	private String forDogId;
+	private String id;
 	private Type type;
 	private Color color;
 	private int price;
@@ -14,14 +14,10 @@ public final class Accessory{
 	public Accessory() {}
 	
 	public Accessory(Type type, Color color, int price){
-		this.forDogId = UUID.randomUUID().toString();
+		this.id = UUID.randomUUID().toString();
 		this.type = type;
 		this.color = color;
 		this.price = price;
-	}
-	
-	public String getForDogId() {
-		return forDogId;
 	}
 	
 	public int getPrice() {

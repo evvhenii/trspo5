@@ -17,4 +17,6 @@ public interface AccessoriesService {
 	Accessory getAccessoryById(String id);
 
 	List<Accessory> getAccessories();
+
+	void createAccessory(Accessory accessory);
 }
